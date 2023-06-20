@@ -12,18 +12,31 @@ body {
     background-color: rgb(144, 197, 214);
 }
 
-h1 { 
+header { 
     color: black;
     letter-spacing: 1vmin;
     padding-top: 10px;
+    text-align: center;
+}
+
+.message {
+    text-align: center;
+    display: none;
+    font-size: x-large;
+    color: orangered;
 }
 
 button {
     margin: 4vmin;
     padding: 2vmin;
     font-size: medium;
-    border-radius: 3vmin;
-    border: 0.5vmin solid darkgray;
-    color: rgb(19, 19, 19);
-
+    border-radius: 2vmin;
+    border: 0.5vmin solid black;
+    color: rgb(0, 0, 0);
 }
+
+button:hover {
+    color: black;
+    background-color: rgb(164, 206, 243);
+}
+
