@@ -12,6 +12,11 @@ body {
     background-color: rgb(144, 197, 214);
 }
 
+.blink {
+    animation: blink 0.4s infinite alternate;
+    -webkit-animation: blink 0.4s infinite alternate;
+  }
+  
 header { 
     color: black;
     letter-spacing: 1vmin;

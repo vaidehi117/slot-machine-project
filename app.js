@@ -4,15 +4,22 @@
   const item3 = getElement('item3');
 
   /*----- state variables -----*/
+let slot;
 
 
   /*----- cached elements  -----*/
 
 
   /*----- event listeners -----*/
-
+  playAgainBtn.addEventListener('click', init);
 
   /*----- functions -----*/
+  init();
+  function init() {
+    slot = [];
+    
+  }
+
   function spin() {
     const num1 = getRandomNumber();
     const num2 = getRandomNumber();
@@ -47,7 +54,6 @@ function hideMessage() {
   const message = document.getElementById("message");
   message.style.display = "none";
 }
+function getWinner() {
 
-function render() {
-  
 }
