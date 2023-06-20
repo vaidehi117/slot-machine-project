@@ -16,12 +16,25 @@ body {
     animation: blink 0.4s infinite alternate;
     -webkit-animation: blink 0.4s infinite alternate;
   }
-  
+
 header { 
     color: black;
     letter-spacing: 1vmin;
     padding-top: 10px;
     text-align: center;
+}
+
+#slot {
+    display: grid;
+    grid-template-columns: repeat(3, 10vmin);
+    grid-template-rows: repeat(1, 10vmin);
+    /* gap: 1vmin; */
+    margin: 4vmin;
+}
+
+#slot>div {
+    border-radius: 1vmin;
+    border: 0.2vmin solid black;
 }
 
 .message {
