@@ -48,13 +48,9 @@ let cradits = 25;
   }
 
   function render() {
-    const reel1 = document.getElementById('reel1');
-    const reel2 = document.getElementById('reel2');
-    const reel3 = document.getElementById('reel3');
-  
-    reel1.textContent = getRandomSymbol();
-    reel2.textContent = getRandomSymbol();
-    reel3.textContent = getRandomSymbol();
+    item1.textContent = spin();
+    item2.textContent = spin();
+    item3.textContent = spin();
   }
 
 //Genatare a random number for slot spin
@@ -77,7 +73,6 @@ document.getElementById('spin-button').addEventListener('click', function() {
     alert('Insufficient credits!');
   }
 });
-
 updateCredits();
 
 // Display the message is the user wins 
