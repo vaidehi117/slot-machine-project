@@ -1,11 +1,12 @@
   /*----- constants -----*/
-  const item1 = getElement('item1');
-  const item2 = getElement('item2');
-  const item3 = getElement('item3');
+  const item1 = document.getElementById('item1');
+  const item2 = document.getElementById('item2');
+  const item3 = document.getElementById('item3');
 
   /*----- state variables -----*/
-let slot;
-let cradits = 25;
+let credits = 25;
+let totalBet = 0;
+let betAmount = 100; //initial bet amount 
 
   /*----- cached elements  -----*/
   const input = document.querySelector("input");
@@ -13,38 +14,83 @@ let cradits = 25;
 
 
   /*----- event listeners -----*/
-  spinButton.addEventListener('click', init);
+  document.getElementById('spin-button').addEventListener('click', function() {
+    spin();
+  });
+
+  document.getElementById('increase-bet').addEventListener('click', function() {
+    increaseBet();
+  });
+
+  document.getElementById('cash-out').addEventListener('click', function() {
+    cashOut();
+  });
   
 
 
   /*----- functions -----*/
-  init();
-  function init() {
-    slot = [
-      [0, 0, 0]
-    ];
-    
-  }
+  const symbols = ['🍒', '🍋', '🍊', '🍇', '🔔', '💎'];
+
 
   function spin() {
     const symbols = ['🍒', '🍋', '🍊', '🍇', '🔔', '💎'];
     const randomIndex = Math.floor(Math.random() * symbols.length);
     return symbols[randomIndex];
   }
+
   function slotSpin() {
+
+    const items = document.getElementsByClassName('item');
+
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      item.innerHTML = ''; // Clear the current symbols
+  
+      for (let j = 0; j < 3; j++) {
+        const symbol = document.createElement('span');
+        symbol.classList.add('slot-symbol');
+        symbol.textContent = getRandomSymbol();
+        reel.appendChild(symbol);
+      }
+    }
+    
     if (credits >= 5) {
       credits -= 5; // Deduct 5 credits for each spin
       render();
       updateCredits();
+      updateBetAmount();
     } else {
       alert('Insufficient credits!');
     }
 
+    if (credits >= betAmount) {
+      // Deduct bet amount from credits
+      credits -= betAmount; 
+      //Increase the total bet amount
+      totalBet += betAmount;
+      render();
+      updateCredits();
+      updateTotalBet();
+    } else {
+      alert('Insufficient credits!');
+    }
+
+    //show message if winner condition 
     if (num1 == num2 && num1 == num3) {
       showMessage();
     } else {
       hideMessage();
     }  
+  }
+
+  //calculate bet amount
+  function increaseBet() {
+    if (betAmount < credits) {
+      betAmount += 10; // Increase bet amount by 10
+      updateBetAmount();
+    } else {
+      alert('Insufficient credits for increasing the bet!');
+    }
   }
 
   function render() {
@@ -53,14 +99,18 @@ let cradits = 25;
     item3.textContent = spin();
   }
 
-//Genatare a random number for slot spin
-  function getRandomNumber() {
-    return Math.floor(Math.random() * 2) + 1;
+//update totalBet 
+function updateTotalBet() {
+  const totalBetElement = document.getElementById('total-bet');
+  totalBetElement.textContent = totalBet;
 }
 
-function getElement(id) {
-  return document.getElementById(id);
+//Update Bet amount
+function updateBetAmount() {
+  const betAmountElement = document.getElementById('bet-amount');
+  betAmountElement.textContent = betAmount;
 }
+updateBetAmount();
 
 //Updates cradits 
 function updateCredits() {
@@ -73,7 +123,6 @@ document.getElementById('spin-button').addEventListener('click', function() {
     alert('Insufficient credits!');
   }
 });
-updateCredits();
 
 // Display the message is the user wins 
 function showMessage() {
@@ -86,3 +135,17 @@ function hideMessage() {
   const message = document.getElementById("message");
   message.style.display = "none";
 }
+
+//Chashout 
+function cashOut() {
+  alert(`You cashed out ${cradits}.`)
+  //Reset the cradits to zero
+  credits = 0;
+  totalBet = 0;
+  updateTotalBet();
+  updateCredits();
+}
+
+updateCredits();
+updateBetAmount();
+updateTotalBet();
