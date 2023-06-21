@@ -8,15 +8,20 @@ let slot;
 
 
   /*----- cached elements  -----*/
-
+  const input = document.querySelector("input");
+  
 
   /*----- event listeners -----*/
-  playAgainBtn.addEventListener('click', init);
+  spinButton.addEventListener('click', init);
+  
+
 
   /*----- functions -----*/
   init();
   function init() {
-    slot = [];
+    slot = [
+      [0, 0, 0]
+    ];
     
   }
 
@@ -36,7 +41,7 @@ let slot;
     }
     
   }
-
+//Genatare a random number for slot spin
   function getRandomNumber() {
     return Math.floor(Math.random() * 2) + 1;
 }
@@ -45,6 +50,7 @@ function getElement(id) {
   return document.getElementById(id);
 }
 
+// Display the message is the user wins 
 function showMessage() {
   const message = document.getElementById("message");
   message.style.display = 'block';
@@ -55,6 +61,5 @@ function hideMessage() {
   const message = document.getElementById("message");
   message.style.display = "none";
 }
-function getWinner() {
 
-}
+//Calculate the cardit 
