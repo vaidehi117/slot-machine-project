@@ -44,8 +44,8 @@ header {
 }
 
 button {
-    margin: 4vmin;
-    padding: 2vmin;
+    margin: 2vmin;
+    padding: 1vmin;
     font-size: medium;
     border-radius: 2vmin;
     border: 0.5vmin solid black;
