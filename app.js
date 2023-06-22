@@ -14,7 +14,7 @@ let betAmount = 100; //initial bet amount
 
 
   /*----- event listeners -----*/
-  document.getElementById('spin-button').addEventListener('click', function() {
+  document.getElementById('spin-button').addEventListener('onClick', function() {
     spin();
   });
 
@@ -53,7 +53,7 @@ let betAmount = 100; //initial bet amount
         reel.appendChild(symbol);
       }
     }
-    
+
     if (credits >= 5) {
       credits -= 5; // Deduct 5 credits for each spin
       render();
@@ -123,6 +123,15 @@ document.getElementById('spin-button').addEventListener('click', function() {
     alert('Insufficient credits!');
   }
 });
+
+//check win 
+function checkWin() {
+  if (item11 === item2 && item2 === item3) {
+    alert('Congratulations! You won!');
+  } else {
+    alert('Sorry, try again.');
+  }
+}
 
 // Display the message is the user wins 
 function showMessage() {
