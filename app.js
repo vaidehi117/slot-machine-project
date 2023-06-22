@@ -1,7 +1,7 @@
-var symbols = ['🍒', '🍋', '🍊', '🍇', '🔔', '💎'];
-var slot1, slot2, slot3;
-var credits = 50; // Initial credits
-var spinning = false;
+let symbols = ['🍒', '🍋', '🍊', '🍇', '🔔', '💎'];
+let slot1, slot2, slot3;
+let credits = 100; // Initial credits
+let spinning = false;
 
 // Add event listener to the "Spin" button
 document.getElementById('spinButton').addEventListener('click', spin);
@@ -34,25 +34,25 @@ function spin() {
    // Start spinning animation
    animationSpin();
 
-//    // After a delay, stop the spinning animation and update the slotUpdate
-//    setTimeout(function() {
-//      stopAnimationSpin();
-//      slotUpdate();
-//      checkWinner();
-//      // Enable the button after the spinning is done
-//      document.getElementById('spinButton').disabled = false;
-//    }, 2000); // Adjust the delay (in milliseconds) to control the spinning duration
+   // After a delay, stop the spinning animation and update the slotUpdate
+   setTimeout(function() {
+     stopAnimationSpin();
+     slotUpdate();
+     checkWinner();
+     // Enable the button after the spinning is done
+     document.getElementById('spinButton').disabled = false;
+   }, 2000); // Adjust the delay (in milliseconds) to control the spinning duration
 }
 
 function animationSpin() {
   spinning = true; 
-  const slotElements = doctument.getElementById('slotMachine');
+  const slotElements = document.getElementById('slotMachine');
   //Duration of each spinning in miliseconds
-  const spinDuration = 100;
+  const spinDuration = 50;
   //Number of spins before it stops
   const maxSpin = 10;
 
-  const spinCount = 0;
+  let spinCount = 0;
   const interval = setInterval(function() {
     //randomly changed the slot symbols 
     for (const i = 0; i < slotElements.length; i++) {
@@ -83,10 +83,6 @@ function slotUpdate() {
   document.getElementById('credit-input').innerHTML = `Credits left: ${credits}`;
 }
 
-// function setMaxBet() {
-//   document.getElementById('bet-Input').value = 100;
-// }
-
 //Checks is the user is winner 
 function checkWinner() {
   const resultContainer = document.getElementById('result');
@@ -97,18 +93,9 @@ function checkWinner() {
   }
 }
 
-function calculateWinAmount(betAmount) {
-  // Customize the win amount calculation logic as per your game rules
-  // For example, you can use multipliers or fixed win amounts based on the winning symbol combination
-  return betAmount * 5; // Multiplier of 5 for this example
-}
-
 // Reset the slot machine state
 function cashout() {
-  slot1 = null;
-  slot2 = null;
-  slot3 = null;
-  credits = 50; // Reset credits to the initial value
+  credits = 100; // Reset credits to the initial value
 
   slotUpdate();
   // Clear the result message

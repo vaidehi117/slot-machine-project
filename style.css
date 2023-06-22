@@ -21,25 +21,29 @@ header {
 
 #slotMachine {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 1vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   .slot {
     display: inline-block;
-    font-size: 48px;
-    width: 100px;
-    height: 100px;
-    border: 2px solid #000;
-    margin: 10px;
-    padding: 20px;
+    font-size: 6vmin;
+    width: auto;
+    height: 11vmin;
+    border: 0.5vmin solid #000;
+    margin: 0.5vmin;
+    padding: 2vmin;
   }
   
   button {
-    font-size: 18px;
-    margin-top: 20px;
-    padding: 10px 20px;
+    font-size: 2vmin;
+    margin-top: 3vmin;
+    margin-bottom: 3vmin;
+    padding: 1vmin;
     border-radius: 4vmin;
-    border: 0.1vmin solid black;
+    border: 0.3vmin solid black;
     color: black;
   }
 
@@ -49,25 +53,26 @@ header {
 } 
   
   #result {
-    font-size: 24px;
-    margin-top: 20px;
+    font-size: 3vmin;
+    margin-top: 3vmin;
+    color:rgb(167, 32, 32);
   }
   
   #credits {
-    font-size: 18px;
-    margin-top: 20px;
+    font-size: 10vmin;
+    margin: 10vmin;
   }
   
   input[type="number"] {
-    padding: 8px;
+    padding: 1vmin;
     font-size: large;
-    border: 0.5px solid black;
+    border: 0.3vmin solid black;
     border-radius: 1vmin;
     margin-right: 20vmin;
   }
   
-  #error {
+  /* #error {
     color: red;
-    font-weight: bold;
+    font-size: larger;
   }
-  
+   */
