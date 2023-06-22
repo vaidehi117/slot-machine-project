@@ -1,6 +1,7 @@
 var symbols = ['🍒', '🍋', '🍊', '🍇', '🔔', '💎'];
 var slot1, slot2, slot3;
-var credits = 100; // Initial credits
+var credits = 50; // Initial credits
+var spinning = false;
 
 // Add event listener to the "Spin" button
 document.getElementById('spinButton').addEventListener('click', spin);
@@ -27,30 +28,52 @@ function spin() {
   slot2 = Math.floor(Math.random() * symbols.length);
   slot3 = Math.floor(Math.random() * symbols.length);
 
+  if (spinning) {
+    return; //prevents multipule spins
+  }
    // Start spinning animation
-   animateSpin();
+   animationSpin();
 
-   // After a delay, stop the spinning animation and update the slotUpdate
-   setTimeout(function() {
-     stopAnimateSpin();
-     slotUpdate();
-     checkWinner();
-     // Enable the button after the spinning is done
-     document.getElementById('spinButton').disabled = false;
-   }, 2000); // Adjust the delay (in milliseconds) to control the spinning duration
+//    // After a delay, stop the spinning animation and update the slotUpdate
+//    setTimeout(function() {
+//      stopAnimationSpin();
+//      slotUpdate();
+//      checkWinner();
+//      // Enable the button after the spinning is done
+//      document.getElementById('spinButton').disabled = false;
+//    }, 2000); // Adjust the delay (in milliseconds) to control the spinning duration
 }
 
-function animateSpin() {
+function animationSpin() {
   spinning = true; 
-  const slotElements = doctument.getElementByClassName('slot');
+  const slotElements = doctument.getElementById('slotMachine');
   //Duration of each spinning in miliseconds
   const spinDuration = 100;
   //Number of spins before it stops
   const maxSpin = 10;
+
+  const spinCount = 0;
+  const interval = setInterval(function() {
+    //randomly changed the slot symbols 
+    for (const i = 0; i < slotElements.length; i++) {
+      const randomIndex = Math.floor(Math.random() * symbols.length);
+      slotElements[i].getElementByTagName('span')[0].textContent = symbols[randomIndex];
+    }
+    spinCount++;
+    //Stops spinning after reaching the maximum number of spin
+    if(spinCount === maxSpin) {
+      clearInterval(interval);
+      stopAnimationSpin();
+    }
+  },spinDuration);
 }
 
-function stopAnimateSpin() {
-  spi
+function stopAnimationSpin() {
+  spinning = false;
+  //Enable the spin button
+  document.getElementById('spinButton').disabled = false;
+  //check the winner and display the result
+  checkWinner();
 }
 
 function slotUpdate() {
@@ -60,9 +83,9 @@ function slotUpdate() {
   document.getElementById('credit-input').innerHTML = `Credits left: ${credits}`;
 }
 
-function setMaxBet() {
-  document.getElementById('bet-Input').value = 100;
-}
+// function setMaxBet() {
+//   document.getElementById('bet-Input').value = 100;
+// }
 
 //Checks is the user is winner 
 function checkWinner() {
@@ -85,7 +108,7 @@ function cashout() {
   slot1 = null;
   slot2 = null;
   slot3 = null;
-  credits = 100; // Reset credits to the initial value
+  credits = 50; // Reset credits to the initial value
 
   slotUpdate();
   // Clear the result message
