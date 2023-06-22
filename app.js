@@ -1,6 +1,6 @@
 var symbols = ['🍒', '🍋', '🍊', '🍇', '🔔', '💎'];
 var slot1, slot2, slot3;
-var credits = 100; // Initial credits
+var credits = 20; // Initial credits
 
 // Add event listener to the "Spin" button
 document.getElementById('spinButton').addEventListener('click', spin);
@@ -8,7 +8,7 @@ document.getElementById('spinButton').addEventListener('click', spin);
 document.getElementById('cashoutButton').addEventListener('click', cashout);
 
 function spin() {
-  var betAmount = parseInt(document.getElementById('betInput').value);
+  var betAmount = parseInt(document.getElementById('bet-Input').value);
 
   // Check if the bet amount is valid
   if (betAmount < 10 || betAmount > 100) {
@@ -33,8 +33,8 @@ function spin() {
    // After a delay, stop the spinning animation and update the UI
    setTimeout(function() {
      stopAnimateSpin();
-     updateUI();
-     checkWin();
+     slotUpdate();
+     checkWinner();
      // Enable the button after the spinning is done
      document.getElementById('spinButton').disabled = false;
    }, 2000); // Adjust the delay (in milliseconds) to control the spinning duration
@@ -55,7 +55,7 @@ function slotUpdate() {
   document.getElementById('slot1').innerHTML = symbols[slot1];
   document.getElementById('slot2').innerHTML = symbols[slot2];
   document.getElementById('slot3').innerHTML = symbols[slot3];
-  document.getElementById('credits').innerHTML = credits;
+  document.getElementById('credit-input').innerHTML = `Credits left: ${credits}`;
 }
 
 //Checks is the user is winner 
@@ -79,7 +79,7 @@ function cashout() {
   slot1 = null;
   slot2 = null;
   slot3 = null;
-  credits = 100; // Reset credits to the initial value
+  credits = 20; // Reset credits to the initial value
 
   slotUpdate();
   // Clear the result message

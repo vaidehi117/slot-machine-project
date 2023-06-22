@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script defer src="script.js"></script>
+    <script defer src="app.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -16,29 +16,22 @@
         </header>
     </div>
 
-    <div class="slot-machine">
-        <section id="slot-display">
-            <span id="slot-symbol">🍒</span>
-            <span id="slot-symbol">🍋</span>
-            <span id="slot-symbol">🍊</span>
-            <span id="slot-symbol">🍇</span>
-            <span id="slot-symbol">🔔</span>
-            <span id="slot-symbol">💎</span> 
-        </section>
-    </div>
-
-    <div>
-        <button id="spin-button">Spin</button>
-        <button id="cashout-button">Cashout</button>
-        <input type="number" id="bet-input" placeholder="Bet Amount">
-        <input type="number" id="credit-input" placeholder="Credit Amount">
-        <input type="number" id="win-input" placeholder="Win Amount">
+    <div id="slotMachine">
+        <div class="slot">
+          <span id="slot1"></span>
+        </div>
+        <div class="slot">
+          <span id="slot2"></span>
+        </div>
+        <div class="slot">
+          <span id="slot3"></span>
+        </div>
+        <button id="spinButton">Spin</button>
+        <input type="number" id="bet-Input" placeholder="Bet Amount">
+        <div id="credit-input"></div>
+        <div id="result"></div>
+        <button id="cashoutButton">Cashout</button>
       </div>
 
-      <div id="result"></div>
-<!-- 
-    <div id="message" class="center message">
-        !!You Won!!
-    </div> -->
 </body>
 </html>
