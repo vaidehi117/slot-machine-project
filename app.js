@@ -1,6 +1,6 @@
 var symbols = ['🍒', '🍋', '🍊', '🍇', '🔔', '💎'];
 var slot1, slot2, slot3;
-var credits = 20; // Initial credits
+var credits = 100; // Initial credits
 
 // Add event listener to the "Spin" button
 document.getElementById('spinButton').addEventListener('click', spin);
@@ -8,11 +8,11 @@ document.getElementById('spinButton').addEventListener('click', spin);
 document.getElementById('cashoutButton').addEventListener('click', cashout);
 
 function spin() {
-  var betAmount = parseInt(document.getElementById('bet-Input').value);
+  const betAmount = parseInt(document.getElementById('bet-Input').value);
 
   // Check if the bet amount is valid
   if (betAmount < 10 || betAmount > 100) {
-    renderResult('Invalid bet amount. Please enter a value between $10 and $100.', 'error', document.getElementById('result'));
+    render('Invalid bet amount. Please enter a value between $10 and $100.', 'error', document.getElementById('result'));
     return;
   }
   // Deduct bet amount from credits
@@ -30,7 +30,7 @@ function spin() {
    // Start spinning animation
    animateSpin();
 
-   // After a delay, stop the spinning animation and update the UI
+   // After a delay, stop the spinning animation and update the slotUpdate
    setTimeout(function() {
      stopAnimateSpin();
      slotUpdate();
@@ -41,14 +41,16 @@ function spin() {
 }
 
 function animateSpin() {
-  // Implement your spinning animation logic here
-  // This function will be called when the spin button is clicked
-  // and before updating the UI with the final symbols
+  spinning = true; 
+  const slotElements = doctument.getElementByClassName('slot');
+  //Duration of each spinning in miliseconds
+  const spinDuration = 100;
+  //Number of spins before it stops
+  const maxSpin = 10;
 }
 
 function stopAnimateSpin() {
-  // Implement your logic to stop the spinning animation here
-  // This function will be called after the delay
+  spi
 }
 
 function slotUpdate() {
@@ -58,9 +60,13 @@ function slotUpdate() {
   document.getElementById('credit-input').innerHTML = `Credits left: ${credits}`;
 }
 
+function setMaxBet() {
+  document.getElementById('bet-Input').value = 100;
+}
+
 //Checks is the user is winner 
 function checkWinner() {
-  var resultContainer = document.getElementById('result');
+  const resultContainer = document.getElementById('result');
   if(slot1 == slot2 && slot2 == slot3) {
     render('!!You Won!!', 'win', resultContainer);
   } else {
@@ -79,7 +85,7 @@ function cashout() {
   slot1 = null;
   slot2 = null;
   slot3 = null;
-  credits = 20; // Reset credits to the initial value
+  credits = 100; // Reset credits to the initial value
 
   slotUpdate();
   // Clear the result message

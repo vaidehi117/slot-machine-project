@@ -19,68 +19,6 @@ header {
     text-align: center;
 }
 
-/*.slot-machine {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-}
-
-#slot-symbol {
-    font-size: 50px;
-    animation: spin 3s;
-}
-
-@keyframes spin {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-100%);
-    }
-}
-
-#slot-display {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-} */
-
-/* .button {
-    margin-top: 2vmin;
-    padding: 2vmin;
-    font-size: 200vmin;
-    border-radius: 4vmin;
-    border: 0.1vmin solid black;
-    color: grey;
-    
-}
-
-button:hover {
-    color: black;
-    background-color: rgb(164, 206, 243);
-} */
-
-/* .input-field {
-    padding: 8px;
-    font-size: large;
-    border: 0.5px solid black;
-    border-radius: 1vmin;
-    margin-right: 20vmin;
-}
-
-.win {
-    color: rgb(158, 71, 240);
-}
-.lose {
-    color:rgb(69, 25, 75);
-}
-.error {
-    color:rgb(173, 3, 3);
-    font-size: large;
-} */
-
-
 #slotMachine {
     text-align: center;
     margin-top: 50px;
@@ -100,7 +38,15 @@ button:hover {
     font-size: 18px;
     margin-top: 20px;
     padding: 10px 20px;
+    border-radius: 4vmin;
+    border: 0.1vmin solid black;
+    color: black;
   }
+
+  button:hover {
+    color: black;
+    background-color: rgb(164, 206, 243);
+} 
   
   #result {
     font-size: 24px;
@@ -113,9 +59,11 @@ button:hover {
   }
   
   input[type="number"] {
-    font-size: 16px;
-    padding: 5px;
-    margin-top: 10px;
+    padding: 8px;
+    font-size: large;
+    border: 0.5px solid black;
+    border-radius: 1vmin;
+    margin-right: 20vmin;
   }
   
   #error {
