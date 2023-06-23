@@ -6,5 +6,5 @@ Welcome to my slot-machine project! This project is made in HTML, CSS and JavaSc
 2. There is checkWinner function which has condtion, when condition is true the it prints the results
 3. Also, this project has chasout button and function when it's clicked the page resets.
 
-- pseudocode file
+- Wireframe and Pseudocode file
 https://docs.google.com/document/d/1Xa2bCrYlTPKtFwSH8k9LvJkwJCgPpXK6mT7On2aBkd0/edit
