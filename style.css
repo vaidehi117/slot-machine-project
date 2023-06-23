@@ -30,9 +30,7 @@ header {
 }
 
 .slot {
-    /* display: inline-block; */
     font-size: 6vmin;
-    /* width: auto; */
     height: 11vmin;
     border: 0.5vmin solid #000;
     margin: 0.5vmin;
@@ -67,7 +65,6 @@ button:hover {
 
 #result {
     font-size: 3vmin;
-    /* margin-top: 3vmin; */
     color: rgb(167, 32, 32);
 }
 
@@ -83,9 +80,3 @@ input[type="number"] {
     border-radius: 1vmin;
     margin-top: 20px;
 }
-
-/* #error {
-    color: red;
-    font-size: larger;
-  }
-   */
