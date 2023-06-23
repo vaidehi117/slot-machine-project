@@ -8,3 +8,6 @@ Welcome to my slot-machine project! This project is made in HTML, CSS and JavaSc
 
 - Wireframe and Pseudocode file
 https://docs.google.com/document/d/1Xa2bCrYlTPKtFwSH8k9LvJkwJCgPpXK6mT7On2aBkd0/edit
+
+Next Step:
+Add animation and audio when it spins and when the user wins
