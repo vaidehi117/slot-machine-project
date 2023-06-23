@@ -48,7 +48,7 @@ function checkWinner() {
   const resultContainer = document.getElementById('result');
   if(slot1 == slot2 && slot2 == slot3) {
     render('!!You Won!!', 'win', resultContainer);
-  } else {
+  } else { 
     render('Try Again.', 'lose', resultContainer);
   }
 }
