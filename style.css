@@ -4,15 +4,15 @@
 
 body {
     height: fit-content;
-    margin: 0;
+    margin: 1vmin;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(144, 197, 214);
+    background-color: cornsilk;
 }
 
-header { 
+header {
     color: black;
     letter-spacing: 1vmin;
     padding-top: 10px;
@@ -22,22 +22,34 @@ header {
 #slotMachine {
     text-align: center;
     margin-top: 1vmin;
-    display: flex;
+    display: table;
     flex-direction: column;
     justify-content: center;
-  }
-  
-  .slot {
-    display: inline-block;
+    display: table;
+    clear: both;
+}
+
+.slot {
+    /* display: inline-block; */
     font-size: 6vmin;
-    width: auto;
+    /* width: auto; */
     height: 11vmin;
     border: 0.5vmin solid #000;
     margin: 0.5vmin;
     padding: 2vmin;
-  }
-  
-  button {
+    float: left;
+    width: auto;
+    padding: 10px;
+    height: 100px;
+    background-color: white;
+}
+
+.credit_input {
+    padding-top: 20px;
+    font-size: x-large;
+}
+
+button {
     font-size: 2vmin;
     margin-top: 3vmin;
     margin-bottom: 3vmin;
@@ -45,33 +57,34 @@ header {
     border-radius: 4vmin;
     border: 0.3vmin solid black;
     color: black;
-  }
+    width: 150px;
+}
 
-  button:hover {
+button:hover {
     color: black;
     background-color: rgb(164, 206, 243);
-} 
-  
-  #result {
+}
+
+#result {
     font-size: 3vmin;
-    margin-top: 3vmin;
-    color:rgb(167, 32, 32);
-  }
-  
-  #credits {
+    /* margin-top: 3vmin; */
+    color: rgb(167, 32, 32);
+}
+
+#credits {
     font-size: 10vmin;
     margin: 10vmin;
-  }
-  
-  input[type="number"] {
+}
+
+input[type="number"] {
     padding: 1vmin;
     font-size: large;
     border: 0.3vmin solid black;
     border-radius: 1vmin;
-    margin-right: 20vmin;
-  }
-  
-  /* #error {
+    margin-top: 20px;
+}
+
+/* #error {
     color: red;
     font-size: larger;
   }

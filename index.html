@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <script defer src="app.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
     <div>
         <header>
@@ -18,20 +20,22 @@
 
     <div id="slotMachine">
         <div class="slot">
-          <span id="slot1"></span>
+            <span id="slot1"></span>
         </div>
         <div class="slot">
-          <span id="slot2"></span>
+            <span id="slot2"></span>
         </div>
         <div class="slot">
-          <span id="slot3"></span>
+            <span id="slot3"></span>
         </div>
-        <button id="spinButton">Spin</button>
-        <input type="number" id="bet-Input" placeholder="Bet Amount">
-        <div id="credit-input"></div>
-        <div id="result"></div>
-        <button id="cashoutButton">Cashout</button>
-      </div>
+    </div>
 
+    <input type="number" id="bet-Input" placeholder="Bet Amount" onchange="inputBoxVal()">
+    <button id="spinButton">Spin</button>
+    <label id="result"></label>
+    <label id="credit-input" class="credit_input"></label>
+    <button id="cashoutButton">Cashout</button>
+    </div>
 </body>
+
 </html>
